@@ -1,0 +1,33 @@
+%h1 Listing news
+
+%table
+  %tr
+    %th Title
+    %th Subtitle
+    %th Post text
+    %th Start date
+    %th End date
+    %th Main image
+    %th Main image file size
+    %th Main image content type
+    %th
+    %th
+    %th
+
+  - @news.each do |news|
+    %tr
+      %td= news.title
+      %td= news.subtitle
+      %td= news.post_text
+      %td= news.start_date
+      %td= news.end_date
+      %td= news.main_image
+      %td= news.main_image_file_size
+      %td= news.main_image_content_type
+      %td= link_to 'Show', news
+      %td= link_to 'Edit', edit_admin_news_path(news)
+      %td= link_to 'Destroy', news, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New News', new_admin_news_path

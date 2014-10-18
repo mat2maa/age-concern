@@ -1,0 +1,48 @@
+%p#notice= notice
+
+%p
+  %b Text:
+  = @contact.text
+%p
+  %b First name:
+  = @contact.first_name
+%p
+  %b Surname:
+  = @contact.surname
+%p
+  %b Type:
+  = @contact.type
+%p
+  %b Address line 1:
+  = @contact.address_line_1
+%p
+  %b Address line 2:
+  = @contact.address_line_2
+%p
+  %b Town:
+  = @contact.town
+%p
+  %b Postcode:
+  = @contact.postcode
+%p
+  %b County:
+  = @contact.county
+%p
+  %b Tel:
+  = @contact.tel
+%p
+  %b Email 1:
+  = @contact.email_1
+%p
+  %b Email 2:
+  = @contact.email_2
+%p
+  %b Longitude:
+  = @contact.longitude
+%p
+  %b Latitude:
+  = @contact.latitude
+
+= link_to 'Edit', edit_admin_contact_path(@contact)
+\|
+= link_to 'Back', admin_contacts_path

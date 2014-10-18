@@ -1,6 +1,40 @@
+// Variables
+$dark-grey: #333333;
+$grey: #d1d3d4;
+$light-grey: #939598;
+$purple: #481F6E;
+$green: #9ECE7B;
+$orange: #ef5925;
+$blue: #00aeef;
+
+// Fonts
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800|Marcellus+SC);
+
+// Custom Bootstrap
+$border-radius-base: 0;
+$border-radius-large: 0;
+$border-radius-small: 0;
+$font-size-base: 14px;
+$line-height-base: 1.428571429;
+$font-family-sans-serif: 'Open Sans', sans-serif;
+$font-family-serif: 'Marcellus SC', serif;
+$headings-font-weight: 400;
+
+$navbar-margin-bottom: 0;
+$navbar-default-color: $dark-grey;
+$navbar-default-bg: white;
+$navbar-default-border: transparent;
+$navbar-default-link-color: $dark-grey;
+$navbar-default-link-hover-color: darken($dark-grey, 20%);
+$navbar-default-link-active-color: darken($dark-grey, 10%);
+
 // import the CSS framework
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+@import "summernote";
+@import "codemirror";
+@import "codemirror/themes/solarized";
 
 // make all images responsive by default
 img {
@@ -33,12 +67,21 @@ img {
   }
 // apply styles to HTML elements
 // to make views framework-neutral
+
+html, body, main {
+  width: 100%;
+}
 main {
   @extend .container;
-  background-color: #eee;
+  background: asset_url('reflection.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   padding-bottom: 80px;
   width: 100%;
-  margin-top: 51px; // accommodate the navbar
+  min-height: 100%;
+  padding: 100px 50px; // accommodate the navbar
   }
 section {
   @extend .row;
@@ -79,4 +122,8 @@ section {
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-xs;
+}
+
+.well, .authform form, .authform fieldset {
+  background-color: rgba(245, 245, 245, 0.25);
 }

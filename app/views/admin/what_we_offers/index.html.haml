@@ -1,0 +1,21 @@
+%h1 Listing what_we_offers
+
+%table
+  %tr
+    %th Activities text
+    %th Groups text
+    %th
+    %th
+    %th
+
+  - @what_we_offers.each do |what_we_offer|
+    %tr
+      %td= what_we_offer.activities_text
+      %td= what_we_offer.groups_text
+      %td= link_to 'Show', what_we_offer
+      %td= link_to 'Edit', edit_admin_what_we_offer_path(what_we_offer)
+      %td= link_to 'Destroy', what_we_offer, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New What we offer', new_admin_what_we_offer_path

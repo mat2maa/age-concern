@@ -1,0 +1,9 @@
+= simple_form_for [:admin, @what_we_offer] do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :activities_text, input_html: { class: 'full-width' }
+    = f.input :groups_text, input_html: { class: 'full-width' }
+
+  .form-actions
+    = f.button :submit, class: 'full-width btn btn-default'

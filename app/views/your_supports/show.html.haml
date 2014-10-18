@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Text:
+  = @your_support.text
+
+= link_to 'Edit', edit_admin_your_support_path(@your_support)
+\|
+= link_to 'Back', admin_your_supports_path

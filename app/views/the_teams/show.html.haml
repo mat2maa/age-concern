@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Trustees text:
+  = @the_team.trustees_text
+%p
+  %b Staff text:
+  = @the_team.staff_text
+%p
+  %b Volunteers text:
+  = @the_team.volunteers_text
+
+= link_to 'Edit', edit_admin_the_team_path(@the_team)
+\|
+= link_to 'Back', admin_the_teams_path

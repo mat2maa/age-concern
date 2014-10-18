@@ -1,0 +1,23 @@
+%h1 Listing the_teams
+
+%table
+  %tr
+    %th Trustees text
+    %th Staff text
+    %th Volunteers text
+    %th
+    %th
+    %th
+
+  - @the_teams.each do |the_team|
+    %tr
+      %td= the_team.trustees_text
+      %td= the_team.staff_text
+      %td= the_team.volunteers_text
+      %td= link_to 'Show', the_team
+      %td= link_to 'Edit', edit_admin_the_team_path(the_team)
+      %td= link_to 'Destroy', the_team, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New The team', new_admin_the_team_path

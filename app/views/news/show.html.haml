@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @news.title
+%p
+  %b Subtitle:
+  = @news.subtitle
+%p
+  %b Post text:
+  = @news.post_text
+%p
+  %b Start date:
+  = @news.start_date
+%p
+  %b End date:
+  = @news.end_date
+%p
+  %b Main image:
+  = @news.main_image
+%p
+  %b Main image file size:
+  = @news.main_image_file_size
+%p
+  %b Main image content type:
+  = @news.main_image_content_type
+
+= link_to 'Edit', edit_admin_news_path(@news)
+\|
+= link_to 'Back', admin_news_index_path

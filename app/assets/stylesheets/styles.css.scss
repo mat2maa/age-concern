@@ -1,0 +1,32 @@
+@import "framework_and_overrides";
+
+body {
+  padding: 0 50px;
+}
+
+.navbar {
+  font-family: $font-family-serif;
+  border: none;
+
+  .nav {
+    text-align: center;
+    width: 100%;
+
+    li {
+      float:none;
+      display:inline-block;
+      *display:inline; /* ie7 fix */
+      *zoom:1; /* hasLayout ie7 trigger */
+      vertical-align: top;
+    }
+  }
+}
+
+.full-width {
+  width: 100%;
+
+}
+
+.form-actions {
+  margin: 15px 0;
+}

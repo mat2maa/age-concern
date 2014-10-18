@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Medical text:
+  = @advice.medical_text
+%p
+  %b Financial text:
+  = @advice.financial_text
+%p
+  %b Legal text:
+  = @advice.legal_text
+%p
+  %b Housing text:
+  = @advice.housing_text
+
+= link_to 'Edit', edit_admin_advice_path(@advice)
+\|
+= link_to 'Back', admin_advices_path

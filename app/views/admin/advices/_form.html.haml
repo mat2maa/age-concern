@@ -1,0 +1,11 @@
+= simple_form_for [:admin, @advice] do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :medical_text, input_html: { class: 'full-width summernote' }
+    = f.input :financial_text, input_html: { class: 'full-width summernote' }
+    = f.input :legal_text, input_html: { class: 'full-width summernote' }
+    = f.input :housing_text, input_html: { class: 'full-width summernote' }
+
+  .form-actions
+    = f.button :submit, class: 'full-width btn btn-default'

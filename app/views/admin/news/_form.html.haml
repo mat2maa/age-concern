@@ -1,0 +1,15 @@
+= simple_form_for [:admin, @news] do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title, input_html: { class: 'full-width' }
+    = f.input :subtitle, input_html: { class: 'full-width' }
+    = f.input :post_text, input_html: { class: 'full-width' }
+    = f.input :start_date, input_html: { class: 'full-width' }
+    = f.input :end_date, input_html: { class: 'full-width' }
+    = f.input :main_image, input_html: { class: 'full-width' }
+    = f.input :main_image_file_size, input_html: { class: 'full-width' }
+    = f.input :main_image_content_type, input_html: { class: 'full-width' }
+
+  .form-actions
+    = f.button :submit, class: 'full-width btn btn-default'

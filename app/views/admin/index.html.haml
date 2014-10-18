@@ -1,0 +1,19 @@
+= content_for :title do
+  Age Concern::ADMIN
+
+.row
+  .col-xs-4
+    .well.well-lg
+      %ul.nav.nav-pills.nav-stacked.nav-admin
+        %li
+          = link_to 'Advice', admin_advices_path
+        %li
+          = link_to 'Contact', admin_contacts_path
+        %li
+          = link_to 'News', admin_news_index_path
+        %li
+          = link_to 'The Team', admin_the_teams_path
+        %li
+          = link_to 'What We Offer', admin_what_we_offers_path
+        %li
+          = link_to 'Your Support', admin_your_supports_path

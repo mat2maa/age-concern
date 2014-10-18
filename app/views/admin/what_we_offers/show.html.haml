@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Activities text:
+  = @what_we_offer.activities_text
+%p
+  %b Groups text:
+  = @what_we_offer.groups_text
+
+= link_to 'Edit', edit_admin_what_we_offer_path(@what_we_offer)
+\|
+= link_to 'Back', admin_what_we_offers_path
