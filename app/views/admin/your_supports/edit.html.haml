@@ -1,7 +1,8 @@
-%h1 Editing your_support
-
-= render 'form'
-
-= link_to 'Show', @your_support
-\|
-= link_to 'Back', admin_your_supports_path
+.row
+  .col-xs-12
+    .well.well-lg
+      %h3 Editing Your Support
+      = render 'form'
+      = link_to 'Show', admin_your_support_path(@your_support)
+      \|
+      = link_to 'Back', admin_your_supports_path

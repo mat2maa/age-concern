@@ -1,7 +1,8 @@
-%h1 Editing contact
-
-= render 'form'
-
-= link_to 'Show', @contact
-\|
-= link_to 'Back', admin_contacts_path
+.row
+  .col-xs-12
+    .well.well-lg
+      %h3 Editing Contact
+      = render 'form'
+      = link_to 'Show', admin_contact_path(@contact)
+      \|
+      = link_to 'Back', admin_contacts_path

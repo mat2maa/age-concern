@@ -2,14 +2,24 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :title, input_html: { class: 'full-width' }
-    = f.input :subtitle, input_html: { class: 'full-width' }
-    = f.input :post_text, input_html: { class: 'full-width' }
-    = f.input :start_date, input_html: { class: 'full-width' }
-    = f.input :end_date, input_html: { class: 'full-width' }
-    = f.input :main_image, input_html: { class: 'full-width' }
-    = f.input :main_image_file_size, input_html: { class: 'full-width' }
-    = f.input :main_image_content_type, input_html: { class: 'full-width' }
+    .form-group
+      %label Title
+      = f.input_field :title, class: 'form-control full-width'
+    .form-group
+      %label Subtitle
+      = f.input_field :subtitle, class: 'form-control full-width'
+    .form-group
+      %label Post Text
+      = f.input_field :post_text, class: 'form-control full-width'
+    .form-group
+      %label Start Date
+      = f.input_field :start_date, class: 'form-control full-width'
+    .form-group
+      %label End Date
+      = f.input_field :end_date, class: 'form-control full-width'
+    .form-group
+      %label Image
+      = f.input_field :main_image, as: :file, class: 'form-control full-width'
 
   .form-actions
-    = f.button :submit, class: 'full-width btn btn-default'
+    = f.button :submit, class: 'form-control full-width btn btn-default'

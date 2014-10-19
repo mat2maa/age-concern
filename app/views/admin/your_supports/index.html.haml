@@ -1,19 +1,26 @@
-%h1 Listing your_supports
+.row
+  - if @your_supports.count == 0
+    .col-xs-4
+      .well.well-lg
+        There is currently no text about Your Support.
+        %br
+        Please create some
+        = link_to 'here', new_admin_your_support_path
 
-%table
-  %tr
-    %th Text
-    %th
-    %th
-    %th
+  - else
+    .col-xs-12
+      .well.well-lg
+        %h3 What We Offer
+        %table.table
+          %tr
+            %th Text
+            %th
+            %th
+            %th
 
-  - @your_supports.each do |your_support|
-    %tr
-      %td= your_support.text
-      %td= link_to 'Show', your_support
-      %td= link_to 'Edit', edit_admin_your_support_path(your_support)
-      %td= link_to 'Destroy', your_support, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Your support', new_admin_your_support_path
+          - @your_supports.each do |your_support|
+            %tr
+              %td= your_support.text
+              %td= link_to 'Show', admin_your_support_path(your_support)
+              %td= link_to 'Edit', edit_admin_your_support_path(your_support)
+              %td= link_to 'Destroy', admin_your_support_path(your_support), :method => :delete, :data => { :confirm => 'Are you sure?' }

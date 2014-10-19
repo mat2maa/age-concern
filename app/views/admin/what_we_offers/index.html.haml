@@ -1,21 +1,28 @@
-%h1 Listing what_we_offers
+.row
+  - if @what_we_offers.count == 0
+    .col-xs-4
+      .well.well-lg
+        There is currently no text about What We Offer.
+        %br
+        Please create some
+        = link_to 'here', new_admin_what_we_offer_path
 
-%table
-  %tr
-    %th Activities text
-    %th Groups text
-    %th
-    %th
-    %th
+  - else
+    .col-xs-12
+      .well.well-lg
+        %h3 What We Offer
+        %table.table
+          %tr
+            %th Activities text
+            %th Groups text
+            %th
+            %th
+            %th
 
-  - @what_we_offers.each do |what_we_offer|
-    %tr
-      %td= what_we_offer.activities_text
-      %td= what_we_offer.groups_text
-      %td= link_to 'Show', what_we_offer
-      %td= link_to 'Edit', edit_admin_what_we_offer_path(what_we_offer)
-      %td= link_to 'Destroy', what_we_offer, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New What we offer', new_admin_what_we_offer_path
+          - @what_we_offers.each do |what_we_offer|
+            %tr
+              %td= what_we_offer.activities_text
+              %td= what_we_offer.groups_text
+              %td= link_to 'Show', admin_what_we_offer_path(what_we_offer)
+              %td= link_to 'Edit', edit_admin_what_we_offer_path(what_we_offer)
+              %td= link_to 'Destroy', admin_what_we_offer_path(what_we_offer), :method => :delete, :data => { :confirm => 'Are you sure?' }

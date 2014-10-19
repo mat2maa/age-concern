@@ -1,7 +1,7 @@
 class Admin::TheTeamsController < ApplicationController
   respond_to :html, :xml, :json
   before_filter :authenticate_user!
-  before_action :set_advice, only: [:edit, :update, :destroy]
+  before_action :set_the_team, only: [:edit, :update, :destroy]
   after_action :verify_authorized
 
   def index
@@ -23,17 +23,17 @@ class Admin::TheTeamsController < ApplicationController
     authorize TheTeam
     @the_team = TheTeam.new(the_team_params)
     @the_team.save
-    respond_with(@the_team)
+    redirect_to admin_the_teams_path
   end
 
   def update
     @the_team.update(the_team_params)
-    respond_with(@the_team)
+    redirect_to admin_the_teams_path
   end
 
   def destroy
     @the_team.destroy
-    respond_with(@the_team)
+    redirect_to admin_the_teams_path
   end
 
   private

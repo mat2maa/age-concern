@@ -5,7 +5,7 @@ class CreateNews < ActiveRecord::Migration
       t.string :subtitle
       t.text :post_text
       t.datetime :start_date
-      t.string :end_date
+      t.datetime :end_date
       t.string :main_image
       t.string :main_image_file_size
       t.string :main_image_content_type

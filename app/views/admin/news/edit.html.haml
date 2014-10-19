@@ -1,7 +1,8 @@
-%h1 Editing news
-
-= render 'form'
-
-= link_to 'Show', @news
-\|
-= link_to 'Back', admin_news_index_path
+.row
+  .col-xs-12
+    .well.well-lg
+      %h3 Editing News
+      = render 'form'
+      = link_to 'Show', admin_news_path(@news)
+      \|
+      = link_to 'Back', admin_news_index_path

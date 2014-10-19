@@ -1,23 +1,30 @@
-%h1 Listing the_teams
+.row
+  - if @the_teams.count == 0
+    .col-xs-4
+      .well.well-lg
+        There is currently no text about The Team.
+        %br
+        Please create some
+        = link_to 'here', new_admin_the_team_path
 
-%table
-  %tr
-    %th Trustees text
-    %th Staff text
-    %th Volunteers text
-    %th
-    %th
-    %th
+  - else
+    .col-xs-12
+      .well.well-lg
+        %h3 The Team
+        %table.table
+          %tr
+            %th Trustees text
+            %th Staff text
+            %th Volunteers text
+            %th
+            %th
+            %th
 
-  - @the_teams.each do |the_team|
-    %tr
-      %td= the_team.trustees_text
-      %td= the_team.staff_text
-      %td= the_team.volunteers_text
-      %td= link_to 'Show', the_team
-      %td= link_to 'Edit', edit_admin_the_team_path(the_team)
-      %td= link_to 'Destroy', the_team, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New The team', new_admin_the_team_path
+          - @the_teams.each do |the_team|
+            %tr
+              %td= the_team.trustees_text
+              %td= the_team.staff_text
+              %td= the_team.volunteers_text
+              %td= link_to 'Show', admin_the_team_path(the_team)
+              %td= link_to 'Edit', edit_admin_the_team_path(the_team)
+              %td= link_to 'Destroy', admin_the_team_path(the_team), :method => :delete, :data => { :confirm => 'Are you sure?' }

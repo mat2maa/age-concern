@@ -3,4 +3,7 @@
   .navbar-inner
     .container
       %ul.nav.navbar-nav
-        = render 'layouts/navigation_links'
+        - if (%w(admin users registrations sessions).include? controller_name) || (controller.class.name.split('::').first == 'Admin')
+          = render 'layouts/admin_navigation_links'
+        - else
+          = render 'layouts/navigation_links'

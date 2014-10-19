@@ -2,8 +2,10 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :activities_text, input_html: { class: 'full-width' }
-    = f.input :groups_text, input_html: { class: 'full-width' }
+    = f.input :activities_text, input_html: { class: 'form-control full-width summernote' }
+    %br
+    = f.input :groups_text, input_html: { class: 'form-control full-width summernote' }
+    %br
 
   .form-actions
-    = f.button :submit, class: 'full-width btn btn-default'
+    = f.button :submit, class: 'form-control full-width btn btn-default'

@@ -1,7 +1,7 @@
 class Admin::YourSupportsController < ApplicationController
   respond_to :html, :xml, :json
   before_filter :authenticate_user!
-  before_action :set_advice, only: [:edit, :update, :destroy]
+  before_action :set_your_support, only: [:edit, :update, :destroy]
   after_action :verify_authorized
 
   def index
@@ -23,17 +23,17 @@ class Admin::YourSupportsController < ApplicationController
     authorize YourSupport
     @your_support = YourSupport.new(your_support_params)
     @your_support.save
-    respond_with(@your_support)
+    redirect_to admin_your_supports_path
   end
 
   def update
     @your_support.update(your_support_params)
-    respond_with(@your_support)
+    redirect_to admin_your_supports_path
   end
 
   def destroy
     @your_support.destroy
-    respond_with(@your_support)
+    redirect_to admin_your_supports_path
   end
 
   private

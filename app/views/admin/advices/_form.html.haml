@@ -2,10 +2,14 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :medical_text, input_html: { class: 'full-width summernote' }
-    = f.input :financial_text, input_html: { class: 'full-width summernote' }
-    = f.input :legal_text, input_html: { class: 'full-width summernote' }
-    = f.input :housing_text, input_html: { class: 'full-width summernote' }
+    = f.input :medical_text, input_html: { class: 'form-control full-width summernote' }
+    %br
+    = f.input :financial_text, input_html: { class: 'form-control full-width summernote' }
+    %br
+    = f.input :legal_text, input_html: { class: 'form-control full-width summernote' }
+    %br
+    = f.input :housing_text, input_html: { class: 'form-control full-width summernote' }
+    %br
 
   .form-actions
-    = f.button :submit, class: 'full-width btn btn-default'
+    = f.button :submit, class: 'form-control full-width btn btn-default'

@@ -2,20 +2,44 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :text, input_html: { class: 'full-width' }
-    = f.input :first_name, input_html: { class: 'full-width' }
-    = f.input :surname, input_html: { class: 'full-width' }
-    = f.input :type, input_html: { class: 'full-width' }
-    = f.input :address_line_1, input_html: { class: 'full-width' }
-    = f.input :address_line_2, input_html: { class: 'full-width' }
-    = f.input :town, input_html: { class: 'full-width' }
-    = f.input :postcode, input_html: { class: 'full-width' }
-    = f.input :county, input_html: { class: 'full-width' }
-    = f.input :tel, input_html: { class: 'full-width' }
-    = f.input :email_1, input_html: { class: 'full-width' }
-    = f.input :email_2, input_html: { class: 'full-width' }
-    = f.input :longitude, input_html: { class: 'full-width' }
-    = f.input :latitude, input_html: { class: 'full-width' }
+    .form-group
+      %label Type
+      = f.input_field :type, class: 'form-control full-width'
+    .form-group
+      %label First Name
+      = f.input_field :first_name, class: 'form-control full-width'
+    .form-group
+      %label Surname
+      = f.input_field :surname, class: 'form-control full-width'
+    %hr
+    .form-group
+      %label Address Line 1
+      = f.input_field :address_line_1, class: 'form-control full-width'
+      %label Address Line 2
+      = f.input_field :address_line_2, class: 'form-control full-width'
+      %label Town
+      = f.input_field :town, class: 'form-control full-width'
+      %label Postcode
+      = f.input_field :postcode, class: 'form-control full-width'
+      %label County
+      = f.input_field :county, class: 'form-control full-width'
+      %label Telephone number
+      = f.input_field :tel, as: :tel, class: 'form-control full-width'
+    %hr
+    .form-group
+      %label Email Address 1
+      = f.input_field :email_1, as: :email, class: 'form-control full-width'
+      %label Email Address 2
+      = f.input_field :email_2, as: :email, class: 'form-control full-width'
+    %hr
+    .form-group
+      %label Location
+      = f.input_field :longitude, class: 'form-control full-width'
+      %label Type
+      = f.input_field :latitude, class: 'form-control full-width'
+    .form-group
+      %label Text
+      = f.input_field :text, class: 'form-control full-width summernote'
 
   .form-actions
-    = f.button :submit, class: 'full-width btn btn-default'
+    = f.button :submit, class: 'form-control full-width btn btn-default'

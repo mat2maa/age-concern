@@ -1,7 +1,8 @@
-%h1 Editing what_we_offer
-
-= render 'form'
-
-= link_to 'Show', @what_we_offer
-\|
-= link_to 'Back', admin_what_we_offers_path
+.row
+  .col-xs-12
+    .well.well-lg
+      %h3 Editing What We Offer
+      = render 'form'
+      = link_to 'Show', admin_what_we_offer_path(@what_we_offer)
+      \|
+      = link_to 'Back', admin_what_we_offers_path

@@ -1,28 +1,36 @@
 .row
   .col-xs-4
     .well.well-lg
-      %h1 Listing advices
 
-      %table
-        %tr
-          %th Medical text
-          %th Financial text
-          %th Legal text
-          %th Housing text
-          %th
-          %th
-          %th
+      - if @advices.count == 0
+        There is currently no advice.
+        %br
+        Please create some
+        = link_to 'here', new_admin_advice_path
 
-        - @advices.each do |advice|
-          %tr
-            %td= advice.medical_text
-            %td= advice.financial_text
-            %td= advice.legal_text
-            %td= advice.housing_text
-            %td= link_to 'Show', advice
-            %td= link_to 'Edit', edit_admin_advice_path(advice)
-            %td= link_to 'Destroy', advice, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-      %br
-
-      = link_to 'New Advice', new_admin_advice_path
+      - else
+        %h3 Advice
+        %dl
+          - @advices.each do |advice|
+            %dt
+              Medical Text
+            %dd
+              = advice.medical_text
+            %dt
+              Financial Text
+            %dd
+              = advice.financial_text
+            %dt
+              Legal Text
+            %dd
+              = advice.legal_text
+            %dt
+              Housing Text
+            %dd
+              = advice.housing_text
+            %dd
+              = link_to 'Show', admin_advice_path(advice)
+            %dd
+              = link_to 'Edit', edit_admin_advice_path(advice)
+            %dd
+              = link_to 'Destroy', admin_advice_path(advice), :method => :delete, :data => { :confirm => 'Are you sure?' }

@@ -1,7 +1,7 @@
 class Admin::NewsController < ApplicationController
   respond_to :html, :xml, :json
   before_filter :authenticate_user!
-  before_action :set_advice, only: [:edit, :update, :destroy]
+  before_action :set_news, only: [:edit, :update, :destroy]
   after_action :verify_authorized
 
   def index
@@ -23,17 +23,17 @@ class Admin::NewsController < ApplicationController
     authorize News
     @news = News.new(news_params)
     @news.save
-    respond_with(@news)
+    redirect_to admin_news_index_path
   end
 
   def update
     @news.update(news_params)
-    respond_with(@news)
+    redirect_to admin_news_index_path
   end
 
   def destroy
     @news.destroy
-    respond_with(@news)
+    redirect_to admin_news_index_path
   end
 
   private

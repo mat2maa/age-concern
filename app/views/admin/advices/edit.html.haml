@@ -1,7 +1,8 @@
-%h1 Editing advice
-
-= render 'form'
-
-= link_to 'Show', @advice
-\|
-= link_to 'Back', admin_advices_path
+.row
+  .col-xs-12
+    .well.well-lg
+      %h3 Editing Advice
+      = render 'form'
+      = link_to 'Show', admin_advice_path(@advice)
+      \|
+      = link_to 'Back', admin_advices_path

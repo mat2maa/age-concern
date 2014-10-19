@@ -23,17 +23,17 @@ class Admin::AdvicesController < ApplicationController
     authorize Advice
     @advice = Advice.new(advice_params)
     @advice.save
-    respond_with(@advice)
+    redirect_to admin_advices_path
   end
 
   def update
     @advice.update(advice_params)
-    respond_with(@advice)
+    redirect_to admin_advices_path
   end
 
   def destroy
     @advice.destroy
-    respond_with(@advice)
+    redirect_to admin_advices_path
   end
 
   private

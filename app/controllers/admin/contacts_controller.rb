@@ -1,7 +1,7 @@
 class Admin::ContactsController < ApplicationController
   respond_to :html, :xml, :json
   before_filter :authenticate_user!
-  before_action :set_advice, only: [:edit, :update, :destroy]
+  before_action :set_contact, only: [:edit, :update, :destroy]
   after_action :verify_authorized
 
   def index
@@ -23,17 +23,17 @@ class Admin::ContactsController < ApplicationController
     authorize Contact
     @contact = Contact.new(contact_params)
     @contact.save
-    respond_with(@contact)
+    redirect_to admin_contacts_path
   end
 
   def update
     @contact.update(contact_params)
-    respond_with(@contact)
+    redirect_to admin_contacts_path
   end
 
   def destroy
     @contact.destroy
-    respond_with(@contact)
+    redirect_to admin_contacts_path
   end
 
   private

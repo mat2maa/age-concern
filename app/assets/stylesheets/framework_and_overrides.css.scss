@@ -71,6 +71,9 @@ img {
 html, body, main {
   width: 100%;
 }
+html, body {
+  height: 100%;
+}
 main {
   @extend .container;
   background: asset_url('reflection.jpg') no-repeat center center fixed;
@@ -126,4 +129,17 @@ section {
 
 .well, .authform form, .authform fieldset {
   background-color: rgba(245, 245, 245, 0.25);
+
+  .nav {
+    li {
+      a {
+        color: white;
+      }
+
+      a:hover, a:focus {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+    }
+
+  }
 }
